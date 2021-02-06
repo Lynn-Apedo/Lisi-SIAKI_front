@@ -1,0 +1,57 @@
+.firstHomeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 12% auto;
+  width: 25%;
+  min-width: 350px;
+  text-align: center;
+
+  //   border: 2px solid black;
+  &_quote {
+    font-size: 35px;
+    font-style: italic;
+    font-weight: lighter;
+    margin-bottom: 10%;
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    @-webkit-keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+    @keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+    &_quoteAuthor {
+      font-weight: lighter;
+      margin-bottom: 20%;
+      font-size: 14px;
+    }
+  }
+
+  &_description {
+    font-weight: lighter;
+    margin-bottom: 10%;
+    text-align: justify;
+  }
+  button {
+    margin-bottom: 2%;
+  }
+}

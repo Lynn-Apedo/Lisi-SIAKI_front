@@ -1,0 +1,40 @@
+button {
+  padding: 10px 60px;
+  border: none;
+  border-radius: 4px;
+  background-color: #383f3e;
+  box-shadow: 10% 10% 10% black;
+  color: white;
+  font-weight: lighter;
+}
+.iconsButton {
+  padding: 9px 10px;
+  background: white;
+  box-shadow: 7px 6px 8px 0px rgba(107, 107, 107, 0.6);
+}
+.buttonAddContainer {
+  width: 100%;
+  margin-bottom: 2%;
+  color: black;
+  background: rgb(199, 197, 197);
+  box-shadow: 7px 6px 8px 0px rgba(107, 107, 107, 0.6);
+  // text-align: left;
+  font-weight: normal;
+}
+.closeModalButton {
+  padding: 7px 10px;
+  // margin: 2%;
+  // border-radius: 50px;
+  color: #383f3e;
+  background: transparent;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.addListButton {
+  background: none;
+  color: black;
+  font-weight: normal;
+  &:hover {
+    cursor: pointer;
+  }
+}

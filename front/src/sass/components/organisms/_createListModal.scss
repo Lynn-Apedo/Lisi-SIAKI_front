@@ -1,0 +1,40 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  border-radius: 5px;
+  background-color: white;
+  &_closeContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &_formContainer {
+    padding: 0 8% 5% 8%;
+
+    &_listTitle {
+      text-align: center;
+      margin: 2%;
+    }
+    &_form {
+      display: flex;
+      flex-direction: column;
+      //   padding: 2%;
+      &_labels {
+        margin-bottom: 1%;
+      }
+      &_inputs {
+        padding: 1% 2%;
+        margin-bottom: 3%;
+        border: 1px solid black;
+        border-radius: 2px;
+      }
+      button {
+        margin: auto;
+        width: 30%;
+        margin-bottom: 1.5%;
+      }
+    }
+  }
+}

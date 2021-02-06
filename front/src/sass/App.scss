@@ -1,0 +1,28 @@
+@import "./global/variables.scss";
+@import "./global/reset.scss";
+@import "./global/OOCSS.scss";
+
+//atoms
+@import "./components/atoms/button";
+@import "./components/atoms/horologe";
+@import "./components/atoms/logo.scss";
+
+//molecules
+@import "./components/molecules/nav.scss";
+
+//organisms
+@import "./components/organisms/header.scss";
+@import "./components/organisms/createListModal";
+
+//pages
+@import "./components/pages/firstHome";
+@import "./components/pages/signup";
+@import "./components/pages/categoryHome";
+
+// @import "./fonts/fonts.scss";
+// @import "./fonts/Megrim/Megrim-Regular.ttf";
+
+@font-face {
+  font-family: "Megrim";
+  src: url("Megrim-Regular.ttf");
+}
