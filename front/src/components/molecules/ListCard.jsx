@@ -22,7 +22,7 @@ export default function ListCard() {
                 </div> 
             </div>
 
-            <div className="listCardContainer">
+            {/* <div className="listCardContainer">
                 <div className="listCardContainer_titleContainer">
                     <p className="listCardContainer_titleContainer_listName">Nom de la liste</p>
                     <p className="listCardContainer_titleContainer_subcategoryName">Nom de la sous-catégorie</p>
@@ -36,9 +36,9 @@ export default function ListCard() {
                             <img src={imgDelete} alt="icon de validation"/>
                     </button>
                 </div> 
-            </div>
+            </div> */}
 
-            <div className="listCardContainer">
+            {/* <div className="listCardContainer">
                 <div className="listCardContainer_titleContainer">
                     <p className="listCardContainer_titleContainer_listName">Nom de la liste</p>
                     <p className="listCardContainer_titleContainer_subcategoryName">Nom de la sous-catégorie</p>
@@ -52,7 +52,7 @@ export default function ListCard() {
                             <img src={imgDelete} alt="icon de validation"/>
                     </button>
                 </div> 
-            </div>
+            </div> */}
              
         </>
     )

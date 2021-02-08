@@ -1,0 +1,62 @@
+.tasksCard {
+  //   border: 3px solid red;
+  width: 48vw;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 3% 4%;
+
+  &_titleContainer {
+    // border: 3px solid pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6%;
+    &_titles {
+      //   border: 3px solid orange;
+      &_listName {
+        font-weight: bold;
+      }
+    }
+  }
+  &_inputContainer {
+    // border: 3px solid green;
+    display: flex;
+    margin-bottom: 2%;
+    border-bottom: 1px solid black;
+    margin-bottom: 6%;
+
+    input {
+      width: 100%;
+      border: none;
+      background: none;
+      padding: 0 0.5%;
+    }
+    button {
+      margin-bottom: 30%;
+    }
+  }
+  &_tasksListContainer {
+    // border: 3px solid violet;
+    overflow-y: scroll;
+    // height: 50vh;
+    max-height: 50vh;
+    padding-right: 2%;
+    &_aTask {
+      //   border: 3px solid orange;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2%;
+      &_content {
+        // border: 3px solid green;
+        display: flex;
+        align-items: center;
+        input {
+          margin-right: 20px;
+        }
+      }
+      &_buttonContainer {
+        // border: 3px solid gray;
+      }
+    }
+  }
+}

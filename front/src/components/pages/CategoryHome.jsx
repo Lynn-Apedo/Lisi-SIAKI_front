@@ -70,6 +70,9 @@ export default function CategoryHome() {
 
                         <div className="categoryContainer_oneContainer_listContainer_container">
                             <ListCard />
+                            <ListCard />
+                            <ListCard />
+                            <ListCard /><ListCard /><ListCard />
                         </div>
 
                     </div>

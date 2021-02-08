@@ -1,0 +1,19 @@
+.tasksContainer {
+  //   border: 3px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //   height: 84vh;
+  max-height: 84vh;
+
+  margin: 2% 0;
+  .sameCategoryContainer {
+    // background-color: yellow;
+    width: 45vw;
+    h3 {
+      border-bottom: 1px solid black;
+      padding-bottom: 1%;
+      margin-bottom: 2%;
+    }
+  }
+}

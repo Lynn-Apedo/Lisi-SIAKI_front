@@ -14,11 +14,13 @@
 //organisms
 @import "./components/organisms/header.scss";
 @import "./components/organisms/createListModal";
+@import "./components/organisms/tasksCard";
 
 //pages
 @import "./components/pages/firstHome";
 @import "./components/pages/signup";
 @import "./components/pages/categoryHome";
+@import "./components/pages/tasksPage";
 
 // @import "./fonts/fonts.scss";
 // @import "./fonts/Megrim/Megrim-Regular.ttf";
