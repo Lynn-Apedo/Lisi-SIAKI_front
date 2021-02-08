@@ -1,23 +1,81 @@
-.categoryContainer {
-  //   border: 3px solid red;
-  overflow-y: scroll;
-  height: 58vh;
-  &_inputContainer {
-    display: flex;
-    justify-content: space-between;
+.addCategoryButtonContainer {
+  // border: 3px solid red;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.categoryTagContainer {
+  // border: 3px solid red;
+  padding: 0 20px;
+  margin-bottom: 1%;
+  height: 100px;
+  &_title {
     border-bottom: 1px solid black;
+    padding-bottom: 0.5%;
     margin-bottom: 1%;
-    input {
-      border: none;
-      padding: 0 1%;
-      width: 100%;
-      background: none;
-    }
-    &_buttons {
+    font-size: 20px;
+  }
+  p {
+  }
+}
+.categoryContainer {
+  // border: 3px solid red;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  // overflow-y: hidden;
+  overflow-x: scroll;
+  // overflow-x: scroll;
+  height: 207vh;
+  // padding-right: 1%;
+
+  //enlever le scrollbar de Firefoxe
+  scrollbar-width: none !important;
+
+  transform: rotate(90deg) translateY(-207vh);
+  transform-origin: top left;
+  width: 29vw;
+  overflow-x: hidden;
+
+  &_oneContainer {
+    transform: rotate(-90deg) translateX(-207vh);
+    transform-origin: top left;
+
+    // border: 3px solid yellow;
+    padding: 0 20px;
+    // width: 96vw;
+    // height: 96vw;
+    min-width: 96vw;
+    min-height: 96vw;
+    &_inputContainer {
       display: flex;
       justify-content: space-between;
-      width: 150px;
-      margin-bottom: 9px;
+      border-bottom: 1px solid black;
+      margin-bottom: 1%;
+      input {
+        border: none;
+        padding: 0 0.5%;
+        width: 100%;
+        background: none;
+        font-size: 20px;
+      }
+      &_buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 150px;
+        margin-bottom: 9px;
+      }
+    }
+
+    &_listContainer {
+      &_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 2%;
+        // mise au propre d'une carte liste
+      }
     }
   }
 }
