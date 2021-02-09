@@ -1,7 +1,7 @@
 import React from "react";
 
 import TasksCard from "../organisms/TasksCard";
-import Horloge from "../atoms/Horloge";
+// import Horloge from "../atoms/Horloge";
 import ListCard from "../molecules/ListCard";
 
 export default function TasksPage() {

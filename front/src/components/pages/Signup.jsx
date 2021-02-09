@@ -1,41 +1,135 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory  } from "react-router-dom";
+import axios from "axios";
 
 export default function Signup() {
+    const [signup, setSignup] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        verifyPassword:"",
+        isSubmitting: false,
+        errorMessage: null,   // why????
+        errorVerification: "",
+    })
+    console.log("SIGNUP", signup)
+    console.log("SIGNUP", signup.verifyPassword)
+
+    const history = useHistory();
+
+    const handleChange = async (event) => {
+        const { name, value } = event.target;
+        setSignup({
+            ...signup,
+            [name]: value,
+        });
+    }
+
+    // if (signup.password !== signup.verifyPassword) {
+    //     setSignup({
+    //         errorVerification: "not same"
+    //     })
+    // }
+    const handleSubmit = async (event) => {
+        event.preventDefault(); //why ????
+        try {
+            setSignup({
+                ...signup,
+                isSubmitting: true,
+                errorMessage: null,
+            });
+
+            await axios({
+                method: "post",
+                url: "api/signup",
+                data: signup,
+            });
+            history.push("/signin");
+        } catch (error) {
+            console.log("OUPS !!!!!!!!!")
+            if (signup.password !== signup.verifyPassword) {
+                setSignup({
+                    errorVerification: "Les mots de passe ne sont pas identique"
+                })
+            }
+
+            setSignup({
+                ...signup, 
+                isSubmitting:false,
+                errorMessage: error.response.data.description,
+            })
+        }
+    }
     return (
         <>
             <div className="formContainer">
                 <h2 className="formContainer_titleForm">
                     Inscription
                 </h2>
-                <form className="formContainer_form">
+                <form onSubmit={handleSubmit} className="formContainer_form">
                     <label htmlFor="firstname" className="formContainer_form_labels">
                         Prénom:
                     </label>
-                    <input type="text" name="firstName" id="firstname" className="formContainer_form_inputs" placeholder="Céleste" required/> 
+                    <input 
+                    type="text" 
+                    value={signup.firstName}
+                    name="firstName" 
+                    id="firstname" className="formContainer_form_inputs" placeholder="Céleste" 
+                    onChange={handleChange}
+                    required/> 
 
                     <label htmlFor="lastname" className="formContainer_form_labels">
                         Nom:
                     </label>
-                    <input type="text" name="lastName" id="lastname" className="formContainer_form_inputs" placeholder="Dupont" required/> 
+                    <input 
+                    type="text" 
+                    value={signup.lastName}
+                    name="lastName" 
+                    id="lastname" className="formContainer_form_inputs" placeholder="Dupont" 
+                    onChange={handleChange}
+                    required/> 
 
                     <label htmlFor="email" className="formContainer_form_labels">
                         Adresse email:
                     </label>
-                    <input type="email" name="email" id="email" className="formContainer_form_inputs" placeholder="lisi@mail.com" required/> 
+                    <input 
+                    type="email"
+                    value={signup.email} 
+                    name="email" 
+                    id="email" className="formContainer_form_inputs" placeholder="lisi@mail.com"
+                    onChange={handleChange}
+                    required/> 
 
                     <label htmlFor="password" className="formContainer_form_labels">
                         Mot de passe:
                     </label>
-                    <input type="password" name="password" id="password" className="formContainer_form_inputs" required/> 
+                    <input 
+                    type="password" 
+                    value={signup.password}
+                    name="password" 
+                    id="password" className="formContainer_form_inputs" 
+                    onChange={handleChange}
+                    required/> 
 
-                    <label htmlFor="password" className="formContainer_form_labels">
+                    <label htmlFor="verifyPassword" className="formContainer_form_labels">
                         Vérification du mot de passe:
                     </label>
-                    <input type="password" name="password" id="password" className="formContainer_form_inputs" required/> 
+                    <input 
+                    type="password" 
+                    value={signup.verifyPassword}
+                    name="verifyPassword" 
+                    id="verifyPassword" className="formContainer_form_inputs"
+                    onChange={handleChange}
+                    required/> 
+
+<p>{signup.errorVerification}</p>
 
                     <div className="formContainer_form_buttonContainer">
-                        <button>
+                        <button
+                        type="submit"
+                        value="Envoyer"
+                        onClick={handleSubmit}>
                             Envoyer
                         </button>
                         <p>Déjà inscript? Par-ici pour <Link to="/signin"><b>se connecter</b> </Link>.</p>

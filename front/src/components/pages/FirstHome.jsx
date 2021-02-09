@@ -5,7 +5,7 @@ export default function FirstHome() {
     return (
         <>
         <div className="firstHomeContainer ">
-            <p className="firstHomeContainer_quote">" Créer de l'ordre avec votre désordre! "
+            <p className="firstHomeContainer_quote">" Metter de l'ordre dans votre désordre! "
             <br/>
                 <span className="firstHomeContainer_quote_quoteAuthor"> 
                 Lina TORO</span>
