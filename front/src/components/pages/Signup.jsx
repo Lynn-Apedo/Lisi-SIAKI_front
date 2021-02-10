@@ -12,6 +12,7 @@ export default function Signup() {
         isSubmitting: false,
         errorMessage: null,   // why????
         errorVerification: "",
+        identicalPassword: false,
     })
     console.log("SIGNUP", signup)
     console.log("SIGNUP", signup.verifyPassword)
@@ -28,38 +29,56 @@ export default function Signup() {
 
     // if (signup.password !== signup.verifyPassword) {
     //     setSignup({
-    //         errorVerification: "not same"
+    //         // ...signup,
+    //         errorVerification: "les mots de passe de sont pas identique.",
+    //         isSubmitting:false,
     //     })
+    // } else if (signup.password === signup.verifyPassword) {
+           
     // }
+   
+
     const handleSubmit = async (event) => {
         event.preventDefault(); //why ????
-        try {
-            setSignup({
-                ...signup,
-                isSubmitting: true,
-                errorMessage: null,
-            });
+        if (signup.password === signup.verifyPassword) {
+            var identicalPassword = true
+        }
 
-            await axios({
-                method: "post",
-                url: "api/signup",
-                data: signup,
-            });
-            history.push("/signin");
-        } catch (error) {
-            console.log("OUPS !!!!!!!!!")
-            if (signup.password !== signup.verifyPassword) {
+        if (identicalPassword === true) {
+            try {
                 setSignup({
-                    errorVerification: "Les mots de passe ne sont pas identique"
+                    ...signup,
+                    isSubmitting: true,
+                    errorMessage: null,
+                    identicalPassword: true,
+
+                });
+    
+                await axios({
+                    method: "post",
+                    url: "api/signup",
+                    data: signup,
+                });
+                history.push("/signin");
+            } catch (error) {
+                console.log("OUPS !!!!!!!!!")
+                
+                setSignup({
+                    ...signup, 
+                    isSubmitting:false,
+                    identicalPassword: false,
+                    errorMessage: error.response.data.description,
                 })
             }
-
+        } else {
             setSignup({
-                ...signup, 
+                ...signup,
+                errorVerification: "les mots de passe de sont pas identique.",
+                identicalPassword: false,
                 isSubmitting:false,
-                errorMessage: error.response.data.description,
             })
         }
+        
     }
     return (
         <>
