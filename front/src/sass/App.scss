@@ -10,6 +10,7 @@
 //molecules
 @import "./components/molecules/nav.scss";
 @import "./components/molecules/listCard";
+@import "./components/molecules/tagCategory";
 
 //organisms
 @import "./components/organisms/header.scss";
@@ -24,6 +25,8 @@
 
 // @import "./fonts/fonts.scss";
 // @import "./fonts/Megrim/Megrim-Regular.ttf";
+
+@import "./keyframe/animationModal.scss";
 
 @font-face {
   font-family: "Megrim";

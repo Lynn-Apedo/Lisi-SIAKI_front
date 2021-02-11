@@ -26,16 +26,6 @@ export default function Signup() {
             [name]: value,
         });
     }
-
-    // if (signup.password !== signup.verifyPassword) {
-    //     setSignup({
-    //         // ...signup,
-    //         errorVerification: "les mots de passe de sont pas identique.",
-    //         isSubmitting:false,
-    //     })
-    // } else if (signup.password === signup.verifyPassword) {
-           
-    // }
    
 
     const handleSubmit = async (event) => {

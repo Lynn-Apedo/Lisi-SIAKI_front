@@ -1,6 +1,7 @@
 .addCategoryButtonContainer {
   // border: 3px solid red;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 2%;
 }
@@ -13,10 +14,8 @@
   &_title {
     border-bottom: 1px solid black;
     padding-bottom: 0.5%;
-    margin-bottom: 1%;
+    margin-bottom: 0.5%;
     font-size: 20px;
-  }
-  p {
   }
 }
 .categoryContainer {
@@ -29,6 +28,8 @@
   // overflow-x: scroll;
   height: 207vh;
   // padding-right: 1%;
+  // background-color: yellow;
+  margin-top: 2%;
 
   //enlever le scrollbar de Firefoxe
   scrollbar-width: none !important;
@@ -47,7 +48,8 @@
     // width: 96vw;
     // height: 96vw;
     min-width: 96vw;
-    min-height: 96vw;
+    // min-height: 46vh;
+
     &_inputContainer {
       display: flex;
       justify-content: space-between;

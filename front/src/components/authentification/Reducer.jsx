@@ -1,10 +1,13 @@
 // import React from "react";
 
 const reducer = (state, action) => {
+    
     switch (action.type) {
         case "LOGIN":
             localStorage.setItem("token", action.payload.data.token);
-            localStorage.setItem("user", JSON.stringify(action.payload.data.user));
+            localStorage.setItem("user", action.payload.data.user);
+            console.log("🚀 ~ file: Reducer.jsx ~ line 10 ~ reducer ~ action", action)
+            
             return {
                 ...state,
                 isAuthenticated: true,
@@ -23,6 +26,7 @@ const reducer = (state, action) => {
             return state;
             // break;
     }
+    
 }
 
 export default reducer;

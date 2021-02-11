@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 
+
 export default function CreateListModal({ closeModal }) {
     let myRef;
 useEffect(() => {
