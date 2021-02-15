@@ -5,7 +5,8 @@ const reducer = (state, action) => {
     switch (action.type) {
         case "LOGIN":
             localStorage.setItem("token", action.payload.data.token);
-            localStorage.setItem("user", action.payload.data.user);
+            localStorage.setItem("user", JSON.stringify(action.payload.data.user));
+            // localStorage.setItem("user", action.payload.data.user);
             console.log("🚀 ~ file: Reducer.jsx ~ line 10 ~ reducer ~ action", action)
             
             return {

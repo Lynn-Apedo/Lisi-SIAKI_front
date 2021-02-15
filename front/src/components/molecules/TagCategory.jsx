@@ -7,17 +7,26 @@ export default function TagCategory() {
     console.log("🚀 ~ file: TagCategory.jsx ~ line 7 ~ TagCategory ~ categories", categories)
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+        console.log("🚀 ~ file: TagCategory.jsx ~ line 11 ~ useEffect ~ token ****", token)
+        const tokenId = localStorage.getItem("user");
+        console.log("🚀 HALOOOOOOO tokenId", JSON.parse(tokenId))
+        const parsedTokenId = JSON.parse(tokenId).id;
+        console.log("parsed", parsedTokenId)
+
         var config = {
             method: "get",
-            url: `/api/getcategories`,
-            // header: {
-            //     Authorization: "Bearer " + localStorage.getItem("token"),
-            // },
+            url: `http://localhost:2046/api/user1/${parsedTokenId}`,
+            header: {
+                Authorization: `Bearer ${token}`,
+            },
         };
         axios(config)
         .then(function (response) {
-            setCategories(response.data.categoriesFound)
-            console.log("🚀 ~ file: TagCategory.jsx ~ line 19 ~ setCategories", setCategories)
+            console.log('IS IT WORKING???')
+            setCategories(response.data.userFound.Categories)
+            // setCategories(response.data)
+            console.log("🚀 ~ file: TagCategory.jsx ~ line 19 ~ setCategories ++++++", setCategories)
         })
         .catch(function (error) {})
     }, [])

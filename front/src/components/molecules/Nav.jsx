@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 import ContextAuth from "../authentification/ContextAuth";
 
-// import { Link } from "react-router-dom";
-
 export default function Nav() {
     const { state } = useContext(ContextAuth);
 

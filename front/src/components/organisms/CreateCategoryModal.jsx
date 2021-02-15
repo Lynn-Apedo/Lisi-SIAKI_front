@@ -17,6 +17,12 @@ const closeCategoryModal = (event) => {
     }
 }
 
+
+function refreshPage() {
+    setTimeout(refreshPage, 1500)
+    window.location.reload(false);
+  }
+
 const history = useHistory();
 const [addCategory, setAddCategory] = useState({
     categoryName: "",
@@ -52,13 +58,15 @@ const handleSubmit = async (event) => {
                 "Content-Type": "application/json",
                 authorization: `Bearer ${token}`, 
             },
-            url: "/api/addcategory",
+            url: "http://localhost:2046/api/addcategory",
             data: addCategory,
         })
         console.log("DUUUUUDE")
 
         history.push("/categoryhome")
         console.log("DUUUUUDE come on !")
+        refreshPage()
+        
 
     } catch (error) {
         console.log("OUPS !!!!!!!!!")
@@ -80,15 +88,16 @@ console.log("🚀 ~ file: CreateCategoryModal.jsx ~ line 78 ~ CreateCategoryModa
 
 const test2 = () => {
     setAddCategory({
+        isSubmitting: true,
         test1: true,
     })
 }
 
 
 
-function refreshPage() {
-    window.location.reload(false);
-  }
+// function refreshPage() {
+//     window.location.reload(false);
+//   }
 // setTimeout(refreshPage, 200)
 
 console.log("*************", addCategory.isSubmitting)
@@ -130,7 +139,11 @@ console.log("*******2",addCategory, 'add.test1',addCategory.test1)
                         <button
                         type="submit"
                         value="Envoyer"
-                        onClick={submitted ? (setTimeout(refreshPage, 1500)) : test2}>
+                        // onClick={submitted ? (setTimeout(refreshPage, 1500)) : test2}>
+                        onClick={handleSubmit}>
+                        {/* // onClick={handleSubmit && submitted? (setTimeout(refreshPage, 1500)) : test2}> */}
+
+
                                 Ajouter
                         </button>
                         </form>
