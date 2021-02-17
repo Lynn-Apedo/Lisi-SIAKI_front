@@ -7,10 +7,18 @@ import Signin from "../components/pages/Signin";
 import CategoryHome from "../components/pages/CategoryHome";
 import TasksPage from "../components/pages/TasksPage";
 
+// import TagCategory from "../components/molecules/TagCategory";
+
+// import 
+
 
 export default function Routes() {
     return (
         <Switch>
+
+            <Route path="/categoryhome/:id">
+                <CategoryHome />
+            </Route>
             <Route path="/tasks">
                 <TasksPage />
             </Route>

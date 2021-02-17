@@ -61,16 +61,11 @@ const handleSubmit = async (event) => {
             url: "http://localhost:2046/api/addcategory",
             data: addCategory,
         })
-        console.log("DUUUUUDE")
-
         history.push("/categoryhome")
-        console.log("DUUUUUDE come on !")
         refreshPage()
         
 
     } catch (error) {
-        console.log("OUPS !!!!!!!!!")
-
         setAddCategory({
             ...addCategory,
             isSubmitting: false,
@@ -82,16 +77,16 @@ const handleSubmit = async (event) => {
 
 }
     
-const test1 = addCategory.test1;
-console.log("🚀 ~ file: CreateCategoryModal.jsx ~ line 78 ~ CreateCategoryModal ~ test1", test1)
+// const test1 = addCategory.test1;
+// console.log("🚀 ~ file: CreateCategoryModal.jsx ~ line 78 ~ CreateCategoryModal ~ test1", test1)
 // const test1 = false;
 
-const test2 = () => {
-    setAddCategory({
-        isSubmitting: true,
-        test1: true,
-    })
-}
+// const test2 = () => {
+//     setAddCategory({
+//         isSubmitting: true,
+//         test1: true,
+//     })
+// }
 
 
 
@@ -102,9 +97,9 @@ const test2 = () => {
 
 console.log("*************", addCategory.isSubmitting)
 const submitted = addCategory.isSubmitting
-console.log("🚀 ~ file: CreateCategoryModal.jsx ~ line 84 ~ CreateCategoryModal ~ submitted", submitted)
+// console.log("🚀 ~ file: CreateCategoryModal.jsx ~ line 84 ~ CreateCategoryModal ~ submitted", submitted)
 
-console.log("*******2",addCategory, 'add.test1',addCategory.test1)
+//console.log("*******2",addCategory, 'add.test1',addCategory.test1)
 
     return (
         <> 

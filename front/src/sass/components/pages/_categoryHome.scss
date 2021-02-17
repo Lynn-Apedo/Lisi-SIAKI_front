@@ -9,11 +9,11 @@
 .categoryTagContainer {
   // border: 3px solid red;
   padding: 0 20px;
-  margin-bottom: 1%;
+  margin-bottom: 3%;
   height: 100px;
   &_title {
     border-bottom: 1px solid black;
-    padding-bottom: 0.5%;
+    padding-bottom: 1%;
     margin-bottom: 0.5%;
     font-size: 20px;
   }
@@ -50,17 +50,23 @@
     min-width: 96vw;
     // min-height: 46vh;
 
-    &_inputContainer {
+    &_dynamicTitleContainer {
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid black;
       margin-bottom: 1%;
-      input {
-        border: none;
-        padding: 0 0.5%;
-        width: 100%;
-        background: none;
+      // input {
+      //   border: none;
+      //   padding: 0 0.5%;
+      //   width: 100%;
+      //   background: none;
+      //   font-size: 20px;
+      // }
+      &_title {
+        // color: red;
+        font-weight: normal;
         font-size: 20px;
+        margin-bottom: -2%;
       }
       &_buttons {
         display: flex;
