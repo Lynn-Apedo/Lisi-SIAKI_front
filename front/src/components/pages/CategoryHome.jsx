@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Horloge from "../atoms/Horloge";
 import imgValidate from "../../assets/icons/validate.png"
@@ -85,7 +85,7 @@ const tagTitle= true
             <div className="categoryTagContainer">
                 <p className="categoryTagContainer_title">Mes catégories:</p>
                 {/* <Link to={}> */}
-                <TagCategory name={true} />
+                <TagCategory />
 
                 {/* </Link> */}
 
@@ -106,7 +106,14 @@ const tagTitle= true
                                 
                                     {/* <h3 className="categoryContainer_oneContainer_dynamicTitleContainer_title">{test3 ? categoryTag.categoryName : <div></div>}</h3>
                                 */}
-                                    <h3 className="categoryContainer_oneContainer_dynamicTitleContainer_title">{tagTitle ? categoryTag.categoryName : <div></div>}</h3>
+
+
+                                {/* <Link to={`/categoryhome/${categoryTag.id}/test`}> */}
+                               
+                                <h3 className="categoryContainer_oneContainer_dynamicTitleContainer_title">{tagTitle ? categoryTag.categoryName : <div></div>}</h3>
+
+                                {/* </Link> */}
+                                    
                                
                                 {/* </div>
                             ))} */}
@@ -135,8 +142,11 @@ const tagTitle= true
 
 
                         <div className="categoryContainer_oneContainer_listContainer_container">
-                            {/* <ListCard />
+                            <div className="categoryContainer_oneContainer_listContainer_container_insideTest">
                             <ListCard />
+
+                            </div>
+                            {/* <ListCard />
                             <ListCard />
                             <ListCard /><ListCard /><ListCard /> */}
                         </div>

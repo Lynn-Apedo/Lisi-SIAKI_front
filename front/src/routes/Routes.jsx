@@ -15,7 +15,9 @@ import TasksPage from "../components/pages/TasksPage";
 export default function Routes() {
     return (
         <Switch>
-
+            {/* <Route path="/categoryhome/test">
+                <CategoryHome />
+            </Route> */}
             <Route path="/categoryhome/:id">
                 <CategoryHome />
             </Route>

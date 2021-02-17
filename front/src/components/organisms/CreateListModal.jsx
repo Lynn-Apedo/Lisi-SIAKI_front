@@ -37,7 +37,10 @@ const handleChange = async (event) => {
 }
 
 
-
+// function refreshPage() {
+//     setTimeout(refreshPage, 1500)
+//     window.location.reload(false);
+//   }
 
 // GET CATEGORY ID AND NAME
 const [categoryTag, setCategoryTag] = useState([]);
@@ -85,6 +88,8 @@ const [categoryTag, setCategoryTag] = useState([]);
                 data: addList,
             })
         history.push("/categoryhome")
+        // refreshPage()
+
 
         } catch (error) {
             setAddList({

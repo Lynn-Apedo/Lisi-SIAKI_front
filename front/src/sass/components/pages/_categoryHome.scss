@@ -11,6 +11,7 @@
   padding: 0 20px;
   margin-bottom: 3%;
   height: 100px;
+
   &_title {
     border-bottom: 1px solid black;
     padding-bottom: 1%;
@@ -29,19 +30,20 @@
   height: 207vh;
   // padding-right: 1%;
   // background-color: yellow;
+
   margin-top: 2%;
 
   //enlever le scrollbar de Firefoxe
-  scrollbar-width: none !important;
+  // scrollbar-width: none !important;
 
-  transform: rotate(90deg) translateY(-207vh);
-  transform-origin: top left;
-  width: 29vw;
-  overflow-x: hidden;
+  // transform: rotate(90deg) translateY(-207vh);
+  // transform-origin: top left;
+  // width: 29vw;
+  // overflow-x: hidden;
 
   &_oneContainer {
-    transform: rotate(-90deg) translateX(-207vh);
-    transform-origin: top left;
+    // transform: rotate(-90deg) translateX(-207vh);
+    // transform-origin: top left;
 
     // border: 3px solid yellow;
     padding: 0 20px;
@@ -77,11 +79,17 @@
     }
 
     &_listContainer {
+      // background-color: yellow;
+
       &_container {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 2%;
+        // flex-wrap: wrap;
+        flex-direction: row;
+        // justify-content: space-between;
+        // margin-bottom: 2%;
+        height: 34vh;
+        max-height: 34vh;
+
         // mise au propre d'une carte liste
       }
     }

@@ -1,19 +1,37 @@
-.listCardContainer {
+.listsContainer {
   display: flex;
-  justify-content: space-between;
-  width: 49%;
-  padding: 1.2%;
-  margin-bottom: 1%;
-  border-radius: 5px;
-  background: rgb(243, 239, 239);
-  &_titleContainer {
-    &_listName {
-      font-weight: bolder;
-    }
-  }
-  &_buttonContainer {
+  flex-wrap: wrap;
+  background-color: red;
+  overflow-y: scroll;
+  height: 34vh;
+  width: 94vw;
+  min-width: 94vw;
+
+  &_listCardContainer {
     display: flex;
     justify-content: space-between;
-    width: 11.5%;
+    width: 49%;
+    padding: 1.5%;
+    margin: 0.5%;
+    border-radius: 5px;
+    background: rgb(243, 239, 239);
+    // background-color: yellow;
+    width: 30vw;
+    min-width: 30vw;
+    height: 10vh;
+    max-height: 10vh;
+    &_titleContainer {
+      &_listName {
+        font-weight: bolder;
+      }
+    }
+    &_buttonContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 15.5%;
+      // button:hover {
+      //   background-color: $lisi-green;
+      // }
+    }
   }
 }
