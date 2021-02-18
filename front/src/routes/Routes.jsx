@@ -6,6 +6,7 @@ import Signup from "../components/pages/Signup";
 import Signin from "../components/pages/Signin";
 import CategoryHome from "../components/pages/CategoryHome";
 import TasksPage from "../components/pages/TasksPage";
+import ListTasks from "../components/pages/ListTasks";
 
 // import TagCategory from "../components/molecules/TagCategory";
 
@@ -15,9 +16,9 @@ import TasksPage from "../components/pages/TasksPage";
 export default function Routes() {
     return (
         <Switch>
-            {/* <Route path="/categoryhome/test">
-                <CategoryHome />
-            </Route> */}
+            <Route path="/getlist/:id">
+                <ListTasks />
+            </Route>
             <Route path="/categoryhome/:id">
                 <CategoryHome />
             </Route>

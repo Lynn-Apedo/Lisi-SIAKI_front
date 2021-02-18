@@ -1,23 +1,19 @@
 import React, { useEffect, useState }from "react";
 import { useParams } from "react-router-dom";
-
-
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import imgModify from "../../assets/icons/pencil.png";
 import imgDelete from "../../assets/icons/delete.png";
-import axios from "axios";
 
 export default function ListCard() {
 
 
     const [lists, setLists] = useState([]);
     const { id } = useParams();
-    console.log("🚀 ~ LIST CARD *****", lists)
-    console.log("🚀 ~ LIST CARD cat Name*****", lists.categoryName  )
-    console.log("🚀 ~ LIST CARD list Name*****", lists.Lists  )
-
-
-    console.log('HELOOOOOOOW **********************')
+    // console.log("🚀 ~ LIST CARD *****", lists)
+    // console.log("🚀 ~ LIST CARD cat Name*****", lists.categoryName  )
+    // console.log("🚀 ~ LIST CARD list Name*****", lists.Lists  )
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -37,28 +33,45 @@ export default function ListCard() {
         .catch( function (error) {})
         
     }, [id])
+
+    // useEffect(() => {
+    //     const token = localStorage.getItem("token");
+    //     var config = {
+    //         method: "get",
+    //         url: `http://localhost:2046/api/getlist/${id}`
+    //     }
+    //     return () => {
+    //         cleanup
+    //     }
+    // }, [input])
+
     return (
         <>
         <div className="listsContainer">
             {lists.map((list, i) => (
-                <div key={i} className="listsContainer_listCardContainer">
-                <div 
-                className="listsContainer_listCardContainer_titleContainer">
+                <Link className="listsContainer_link" to={`/getlist/${list.id}`}>
+
+                    <div key={i} className="listsContainer_link_listCardContainer">
+                        
+                        <div 
+                        className="listsContainer_link_listCardContainer_titleContainer">
+                        
+                            <p className="listsContainer_link_listCardContainer_titleContainer_listName">{list.listName}</p>
+                            <p className="listsContainer_link_listCardContainer_titleContainer_subcategoryName">{list.subcategoryName}</p>
+                        </div>
+
+                        <div className="listsContainer_link_listCardContainer_buttonContainer">
+                            <button className="iconsButton">
+                                    <img src={imgModify} alt="icon de validation"/>
+                            </button>
+                            <button className="iconsButton">
+                                    <img src={imgDelete} alt="icon de validation"/>
+                            </button>
+                        </div> 
+
+                    </div>
+                </Link>
                 
-                    <p className="listsContainer_listCardContainer_titleContainer_listName">{list.listName}</p>
-                    <p className="listsContainer_listCardContainer_titleContainer_subcategoryName">{list.subcategoryName}</p>
-                </div>
-
-                <div className="listsContainer_listCardContainer_buttonContainer">
-                    <button className="iconsButton">
-                            <img src={imgModify} alt="icon de validation"/>
-                    </button>
-                    <button className="iconsButton">
-                            <img src={imgDelete} alt="icon de validation"/>
-                    </button>
-                </div> 
-
-            </div>
             ))}
 
         </div>

@@ -1,0 +1,38 @@
+.mainContainer {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 3% auto;
+
+  &_oneListContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    width: 50vw;
+    height: 80vh;
+    border-radius: 5px;
+    padding: 3%;
+    &_header {
+      border: 3px solid green;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 10%;
+      &_titleContainer {
+        // border: 3px solid red;
+        &_listName {
+          font-weight: bold;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  &_otherListsByCategoryContainer {
+    background-color: lavender;
+    width: 40vw;
+  }
+}

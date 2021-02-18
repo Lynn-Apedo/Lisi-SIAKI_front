@@ -1,37 +1,121 @@
 .listsContainer {
   display: flex;
   flex-wrap: wrap;
-  background-color: red;
+  // background-color: red;
   overflow-y: scroll;
-  height: 34vh;
-  width: 94vw;
+  // overflow-x: hidden;
+  max-height: 34vh;
+  min-height: 20vh;
+  // width: 94vw;
   min-width: 94vw;
+  // width: 49%;
 
-  &_listCardContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 49%;
-    padding: 1.5%;
+  &_link {
     margin: 0.5%;
-    border-radius: 5px;
-    background: rgb(243, 239, 239);
-    // background-color: yellow;
-    width: 30vw;
-    min-width: 30vw;
-    height: 10vh;
-    max-height: 10vh;
-    &_titleContainer {
-      &_listName {
-        font-weight: bolder;
+
+    &:hover {
+      cursor: pointer;
+      animation: vibrate-1 0.3s linear infinite both;
+      @keyframes vibrate-1 {
+        0% {
+          -webkit-transform: translate(0);
+          transform: translate(0);
+        }
+        20% {
+          -webkit-transform: translate(-2px, 2px);
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          -webkit-transform: translate(-2px, -2px);
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          -webkit-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+        }
+        80% {
+          -webkit-transform: translate(2px, -2px);
+          transform: translate(2px, -2px);
+        }
+        100% {
+          -webkit-transform: translate(0);
+          transform: translate(0);
+        }
       }
     }
-    &_buttonContainer {
+    &_listCardContainer {
       display: flex;
       justify-content: space-between;
-      width: 15.5%;
-      // button:hover {
-      //   background-color: $lisi-green;
-      // }
+      align-items: center;
+
+      // width: 49%;
+      padding: 0.5% 3%;
+      margin: 0.5%;
+      border-radius: 5px;
+      background: rgb(243, 239, 239);
+      // background-color: yellow;
+      width: 30vw;
+      min-width: 30vw;
+      height: 10vh;
+      max-height: 10vh;
+      &_titleContainer {
+        &_listName {
+          font-weight: bolder;
+        }
+      }
+      &_buttonContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 15.5%;
+        height: 45%;
+
+        // button:hover {
+        //   background-color: $lisi-green;
+        // }
+      }
     }
   }
 }
+
+// .listsContainer {
+//   display: flex;
+//   flex-wrap: wrap;
+//   background-color: red;
+//   overflow-y: scroll;
+//   // overflow-x: hidden;
+//   max-height: 34vh;
+//   min-height: 20vh;
+//   // width: 94vw;
+//   // min-width: 94vw;
+//   // width: 49%;
+
+//   &_link {
+//     &_listCardContainer {
+//       display: flex;
+//       justify-content: space-between;
+//       // width: 49%;
+//       padding: 1.5%;
+//       margin: 0.5%;
+//       border-radius: 5px;
+//       background: rgb(243, 239, 239);
+//       // background-color: yellow;
+//       width: 30vw;
+//       min-width: 30vw;
+//       height: 10vh;
+//       max-height: 10vh;
+//       &_titleContainer {
+//         &_listName {
+//           font-weight: bolder;
+//         }
+//       }
+//       &_buttonContainer {
+//         display: flex;
+//         justify-content: space-between;
+//         width: 15.5%;
+//         // button:hover {
+//         //   background-color: $lisi-green;
+//         // }
+//       }
+//     }
+//   }
+// }
