@@ -7,15 +7,15 @@
 
   &_oneListContainer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-between;
     background-color: whitesmoke;
     width: 50vw;
     height: 80vh;
     border-radius: 5px;
     padding: 3%;
     &_header {
-      border: 3px solid green;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -28,6 +28,12 @@
           font-weight: bold;
           font-size: 20px;
         }
+      }
+    }
+    &_taskContainer {
+      display: flex;
+      flex-direction: column;
+      &_inputContainer {
       }
     }
   }

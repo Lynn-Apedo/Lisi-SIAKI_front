@@ -5,6 +5,7 @@ import axios from "axios";
 
 // import imgModify from "../../assets/icons/pencil.png";
 import imgDelete from "../../assets/icons/delete.png";
+import TasksCard from "../organisms/TasksCard";
 
 
 export default function ListTasks() {
@@ -61,6 +62,20 @@ export default function ListTasks() {
                         </div>
 
                     </div>
+                    {/* <div className="mainContainer_oneListContainer_taskContainer">
+                        <div className="mainContainer_oneListContainer_taskContainer_inputContainer">
+                            <div className="mainContainer_oneListContainer_taskContainer_inputContainer_label">
+                                <label htmlFor="">Ajouter une tâche:</label>
+                            </div>
+                            <div className="mainContainer_oneListContainer_taskContainer_inputContainer_input">
+                                <input type="text"/>
+                                <button>+</button>
+                            </div>
+                            
+                        </div>
+                    </div> */}
+                    <TasksCard />
+
                          
 
 

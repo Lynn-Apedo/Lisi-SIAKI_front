@@ -1,9 +1,12 @@
 .tasksCard {
   //   border: 3px solid red;
-  width: 48vw;
-  background-color: whitesmoke;
-  border-radius: 10px;
-  padding: 3% 4%;
+  // width: 38vw;
+  width: 100%;
+  // background-color: whitesmoke;
+  // background-color: pink;
+  // border-radius: 10px;
+  // padding: 3% 4%;
+  margin-top: 6%;
 
   &_titleContainer {
     // border: 3px solid pink;
@@ -39,7 +42,7 @@
     // border: 3px solid violet;
     overflow-y: scroll;
     // height: 50vh;
-    max-height: 50vh;
+    max-height: 45vh;
     padding-right: 2%;
     &_aTask {
       //   border: 3px solid orange;
