@@ -4,6 +4,7 @@ import axios from "axios";
 
 import imgValidate from "../../assets/icons/validate.png"
 import imgDelete from "../../assets/icons/delete.png";
+import TaskContainer from "../molecules/TaskContainer";
 
 
 export default function TasksCard() {
@@ -12,17 +13,14 @@ export default function TasksCard() {
         isSubmitting: false,
         errorMessage: null,
     })
-    console.log("🚀 ~ TASKCARD STATE", addTask)
+    // console.log("🚀 ~ TASKCARD STATE", addTask)
 
-    // GET LIST ID & tasknames
+    // GET LIST ID
     const [listId, setListId] = useState([]);
-    console.log("🚀 ~ LIST TASKCARD", listId)
-    console.log("🚀 ~ LISTID TASKCARD", listId.id)
-    console.log("🚀 ~ LISTID TASKCARD TASKNAMES ***", listId.Tasks)
-
+    // console.log("🚀 ~ LIST TASKCARD", listId)
+    // console.log("🚀 ~ LISTID TASKCARD", listId.id)
+    // console.log("🚀 ~ LISTID TASKCARD TASKNAMES ***", listId.Tasks)
     const { id } = useParams();
-
-    
     useEffect(() => {
         var config = {
             method: "get",
@@ -36,6 +34,7 @@ export default function TasksCard() {
                 console.log("TASKCARD LIST ID RECUPERATION DOENS'T WORK")
             })
     }, [id])
+    
     
     function refreshPage() {
         setTimeout(refreshPage, 1500)
@@ -128,12 +127,12 @@ export default function TasksCard() {
                 </form>
 
 
-                <div className="tasksCard_tasksListContainer">
-                    {listId.map((task, i) => (
-                        <div key={i}className="tasksCard_tasksListContainer_aTask">
+                {/* <div className="tasksCard_tasksListContainer">
+                    {tasksListId.map((task, i) => (
+                        <div className="tasksCard_tasksListContainer_aTask">
                             <div className="tasksCard_tasksListContainer_aTask_content">
                                 <input type="checkbox"/>
-                                <label htmlFor=""> {task.id}</label>
+                                <label htmlFor=""> {task.taskName}</label>
                             </div>
                             <div className="tasksCard_tasksListContainer_aTask_buttonContainer">
                                 <button className="iconsButton">
@@ -141,10 +140,10 @@ export default function TasksCard() {
                                 </button>
                             </div>
                         </div>
-                    ))}                    
-                </div>
+                    ))}        
+                </div> */}
                 
-
+<TaskContainer />
             </div>
         </>
     )

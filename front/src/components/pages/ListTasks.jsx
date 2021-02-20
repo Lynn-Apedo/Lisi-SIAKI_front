@@ -11,8 +11,8 @@ import TasksCard from "../organisms/TasksCard";
 export default function ListTasks() {
     const [list, setList] = useState([]);
     const { id } = useParams();
-    console.log("🚀 ~ HUMANS id", id)
-    console.log("🚀 ~ LIST CARD *****", list)
+    // console.log("🚀 ~ HUMANS id", id)
+    // console.log("🚀 ~ LIST CARD *****", list)
     // console.log("🚀 ~ LIST CARD cat Name*****", lists.categoryName  )
 
     useEffect(() => {
